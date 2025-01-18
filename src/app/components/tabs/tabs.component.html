@@ -1,0 +1,146 @@
+<div id="navbody">
+  <form action="#">
+    <ul class="ul">
+      <input
+        [checked]="currentRoute.includes('home')"
+        name="rad"
+        class="radio"
+        id="choose1"
+        type="radio"
+      />
+      <label for="choose1">
+        <li (click)="onHomeClick()" class="li">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            height="24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            class="svg w-6 h-6 text-gray-800 dark:text-white"
+          >
+            <path
+              d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"
+              stroke-width="2"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke="currentColor"
+            ></path>
+          </svg>
+        </li>
+      </label>
+      <input
+        [checked]="currentRoute.includes('record')"
+        class="radio"
+        name="rad"
+        id="choose2"
+        type="radio"
+      />
+      <label for="choose2">
+        <li (click)="onReportClick()" class="li">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            height="24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            class="svg w-6 h-6 text-gray-800 dark:text-white"
+          >
+            <rect
+              x="4"
+              y="4"
+              width="16"
+              height="16"
+              rx="2"
+              ry="2"
+              stroke-width="2"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke="currentColor"
+            ></rect>
+            <path
+              d="M8 10h8M8 14h8M8 6h8"
+              stroke-width="2"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke="currentColor"
+            ></path>
+          </svg>
+        </li>
+      </label>
+      <input
+        [checked]="currentRoute.includes('achievements')"
+        class="radio"
+        name="rad"
+        id="choose3"
+        type="radio"
+      />
+      <label for="choose3">
+        <li (click)="onAchievementsClick()" class="li">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            height="24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            class="svg w-6 h-6 text-gray-800 dark:text-white"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+              stroke-width="2"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke="currentColor"
+            ></circle>
+            <path
+              d="M9 12l2 2 4-4"
+              stroke-width="2"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke="currentColor"
+            ></path>
+          </svg>
+        </li>
+      </label>
+      <input
+        [checked]="currentRoute.includes('settings')"
+        class="radio"
+        name="rad"
+        id="choose4"
+        type="radio"
+      />
+      <label for="choose4">
+        <li (click)="onSettingsClick()" class="li">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            height="24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            class="svg w-6 h-6 text-gray-800 dark:text-white"
+          >
+            <path
+              d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"
+              stroke-width="2"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke="currentColor"
+            ></path>
+            <path
+              d="M19.37 12.91c.03-.3.03-.61.03-.91 0-.3 0-.61-.03-.91l2.1-1.64a.43.43 0 0 0 .1-.54l-2-3.46a.426.426 0 0 0-.5-.19l-2.48 1a7.014 7.014 0 0 0-1.5-.87l-.38-2.65a.426.426 0 0 0-.42-.35h-4a.426.426 0 0 0-.42.35l-.38 2.65c-.53.2-1.04.5-1.5.87l-2.48-1a.426.426 0 0 0-.5.19l-2 3.46a.43.43 0 0 0 .1.54l2.1 1.64c-.03.3-.03.61-.03.91 0 .3 0 .61.03.91l-2.1 1.64a.43.43 0 0 0-.1.54l2 3.46c.1.18.32.25.5.19l2.48-1c.46.37.97.67 1.5.87l.38 2.65c.04.2.22.35.42.35h4c.2 0 .38-.15.42-.35l.38-2.65c.53-.2 1.04-.5 1.5-.87l2.48 1c.18.07.4-.01.5-.19l2-3.46a.43.43 0 0 0-.1-.54l-2.1-1.64Z"
+              stroke-width="2"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke="currentColor"
+            ></path>
+          </svg>
+        </li>
+      </label>
+    </ul>
+  </form>
+</div>
