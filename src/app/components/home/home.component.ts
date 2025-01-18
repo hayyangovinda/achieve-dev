@@ -4,10 +4,11 @@ import { UtilsService } from '../../services/utils.service';
 import { SharingService } from '../../services/sharing.service';
 import { Router } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { RatingComponent } from '../rating/rating.component';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [RatingComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

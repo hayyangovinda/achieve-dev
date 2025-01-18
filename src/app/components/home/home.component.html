@@ -6,11 +6,11 @@
   <div class="home-card reminder-card">
     <div (click)="onReminderClick()" class="category-box">
       <span class="category-name">🗓️ Reminders</span>
-      <!-- <app-rating
+      <app-rating
         class="rating"
         [rating]="doneRemindersArray.length"
         [totalStars]="reminders.length"
-      ></app-rating> -->
+      ></app-rating>
       <img class="result" [src]="reminderCompleteImgPath" alt="" />
     </div>
 
@@ -39,11 +39,11 @@
   <div class="home-card">
     <div (click)="onCategoryClick(category)" class="category-box">
       <span class="category-name">{{ category.icon }} {{ category.name }}</span>
-      <!-- <app-rating
+      <app-rating
         class="rating"
         [rating]="category.tasksDone"
         [totalStars]="category.tasks.length"
-      ></app-rating> -->
+      ></app-rating>
       <img class="result" [src]="category.completeImgPath" alt="" />
     </div>
 
