@@ -7,4 +7,8 @@ export class SharingService {
   constructor() {}
 
   currentRoute = signal('');
+
+  updateCurrentRoute(route: string) {
+    this.currentRoute.set(route);
+  }
 }

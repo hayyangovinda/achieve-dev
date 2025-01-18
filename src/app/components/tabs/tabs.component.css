@@ -1,0 +1,47 @@
+#navbody {
+  width: 100%;
+  height: 60px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 40px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.041);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.ul {
+  list-style: none;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+.ul .li {
+  display: inline-block;
+}
+
+ul.ul {
+  padding-left: 0;
+}
+.radio {
+  display: none;
+}
+.svg {
+  width: 24px;
+  height: 24px;
+  opacity: 80%;
+  cursor: pointer;
+  padding: 13px 30px;
+  transition: 0.2s;
+}
+.ul .li .svg.active {
+  transition: 0.1s;
+  color: #ff5b22;
+  position: relative;
+  margin-top: -4px;
+  opacity: 100%;
+}
+.radio:checked + label .li .svg {
+  color: #ff5b22;
+  fill-rule: evenodd;
+}

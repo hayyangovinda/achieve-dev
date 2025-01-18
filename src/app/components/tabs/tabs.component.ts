@@ -1,10 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { SharingService } from '../../services/sharing.service';
 
 @Component({
   selector: 'app-tabs',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './tabs.component.html',
   styleUrl: './tabs.component.css',
 })
@@ -13,5 +13,24 @@ export class TabsComponent implements OnInit {
   currentRoute = '';
   sharingService = inject(SharingService);
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.currentRoute = this.sharingService.currentRoute();
+    console.log('this.currentRoute: ', this.currentRoute);
+  }
+
+  onSettingsClick() {
+    this.router.navigateByUrl('settings');
+  }
+
+  onHomeClick() {
+    this.router.navigateByUrl('home');
+  }
+
+  onReportClick() {
+    this.router.navigateByUrl('report');
+  }
+
+  onAchievementsClick() {
+    this.router.navigateByUrl('achievements');
+  }
 }
