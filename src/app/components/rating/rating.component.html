@@ -1,9 +1,9 @@
 <div class="rating">
   <ng-container *ngFor="let star of stars; let i = index">
     @if(i < rating){
-    <img src="../../../assets/star-fill.png" alt="filled star" />
+    <img src="../../../public/star-fill.png" alt="filled star" />
     } @if(i >=rating){
-    <img src="../../../assets/star-fill-no.png" alt="unfilled star" />
+    <img src="../../../public/star-fill-no.png" alt="unfilled star" />
     }
   </ng-container>
 </div>
