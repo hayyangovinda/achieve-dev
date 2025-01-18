@@ -11,4 +11,10 @@ export class SharingService {
   updateCurrentRoute(route: string) {
     this.currentRoute.set(route);
   }
+
+  comingFrom = signal(null);
+
+  updateComingFrom(route: any) {
+    this.comingFrom.set(route);
+  }
 }

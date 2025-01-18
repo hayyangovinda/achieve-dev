@@ -1,0 +1,83 @@
+<main class="main">
+  <h4 class="title">Today's Goals</h4>
+
+  @if (reminders.length) {
+
+  <div class="home-card reminder-card">
+    <div (click)="onReminderClick()" class="category-box">
+      <span class="category-name">🗓️ Reminders</span>
+      <!-- <app-rating
+        class="rating"
+        [rating]="doneRemindersArray.length"
+        [totalStars]="reminders.length"
+      ></app-rating> -->
+      <img class="result" [src]="reminderCompleteImgPath" alt="" />
+    </div>
+
+    @if (showReminders) {
+    <div class="tasks">
+      @for (reminder of reminders ;track $index) {
+      <div class="task">
+        <div class="task-container">
+          <label class="container">
+            <input
+              (click)="onReminderCheckBoxCick(reminder)"
+              [checked]="reminder.done"
+              type="checkbox"
+            />
+            <div class="checkmark"></div>
+          </label>
+
+          <span>{{ reminder.name }}</span>
+        </div>
+      </div>
+      }
+    </div>
+    }
+  </div>
+  } @for (category of categories; track $index) {
+  <div class="home-card">
+    <div (click)="onCategoryClick(category)" class="category-box">
+      <span class="category-name">{{ category.icon }} {{ category.name }}</span>
+      <!-- <app-rating
+        class="rating"
+        [rating]="category.tasksDone"
+        [totalStars]="category.tasks.length"
+      ></app-rating> -->
+      <img class="result" [src]="category.completeImgPath" alt="" />
+    </div>
+
+    @if (category.showTasks) {
+
+    <div class="tasks">
+      @for (task of category.tasks ;track $index) {
+      <div class="task">
+        <div class="task-container">
+          <label class="container">
+            <input
+              (click)="onCheckBoxClick($event, category, task)"
+              [checked]="task.done"
+              type="checkbox"
+            />
+            <div class="checkmark"></div>
+          </label>
+
+          <span>{{ task.name }}</span>
+        </div>
+      </div>
+      }
+    </div>
+
+    }
+  </div>
+  } @if(!categories.length && showmodal && !reminders.length){
+
+  <div class="create-goal-card">
+    <img class="rocket" src="../../assets/3dstar.png" alt="" />
+    <button (click)="onCreateGoalClick()">Let's create some goals</button>
+  </div>
+  } @if (showLoader) {
+
+  <!-- <app-loader></app-loader> -->
+  }
+</main>
