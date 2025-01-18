@@ -4,8 +4,8 @@ import { UtilsService } from '../../services/utils.service';
 import { SharingService } from '../../services/sharing.service';
 import { Router } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { RatingComponent } from '../rating/rating.component';
-import { LoaderComponent } from '../loader/loader.component';
+import { RatingComponent } from '../shared/rating/rating.component';
+import { LoaderComponent } from '../shared/loader/loader.component';
 
 @Component({
   selector: 'app-home',
