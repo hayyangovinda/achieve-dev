@@ -18,14 +18,16 @@
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
-            "public": [
+
+            "styles": ["src/styles.css"],
+            "scripts": [],
+            "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "output": "/public"
               }
-            ],
-            "styles": ["src/styles.css"],
-            "scripts": []
+            ]
           },
           "configurations": {
             "production": {

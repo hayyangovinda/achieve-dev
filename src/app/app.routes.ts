@@ -21,4 +21,11 @@ export const routes: Routes = [
         (c) => c.CategoriesComponent
       ),
   },
+  {
+    path: 'settings/to-do-form',
+    loadComponent: () =>
+      import('./components/settings/todo-form/todo-form.component').then(
+        (c) => c.TodoFormComponent
+      ),
+  },
 ];

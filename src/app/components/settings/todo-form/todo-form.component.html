@@ -1,0 +1,99 @@
+<main [formGroup]="categoryForm" class="  form">
+  <img (click)="onBackClick()" src="back.svg" alt="" class="back" />
+
+  <h4 class="title">Add Category</h4>
+
+  <div class="category-input-container">
+    <input formControlName="icon" readonly (focus)="onIconFocus($event)" class="row icon-input input" type="text"
+      name="" id="" autocapitalize="words" placeholder="Icon" tourAnchor="icon" />
+    <input tourAnchor="category" formControlName="name" placeholder="Category name" type="text"
+      class="row input category-input" />
+  </div>
+  <h3 class="subtitle">Goals</h3>
+  <div formArrayName="tasks" class="taskForm">
+    <div [formGroupName]="i" *ngFor="let task of taskFormArray.controls; let i = index" class="input-container">
+      <input [tourAnchor]="'taskName' + i" formControlName="name" #taskInput placeholder="Task Name" type="text"
+        (blur)="checkFilledTaskInput()" class="row input" />
+      <img [tourAnchor]="'showTaskOptions' + i" (click)="showTaskOptions(i)" class="drop-down-icon"
+        src="arrow_down.svg" />
+
+      <div *ngIf="showTaskOptionArray[i]" class="task-options">
+        <div [tourAnchor]="'repeatOn' + i" class="days">
+          {{ daysSelectedStore[i] }}
+        </div>
+        <div class="days-btn-container">
+          <input (click)="onDayClick(i, 'Mon')" formControlName="monday" type="checkbox" [id]="'monday' + i"
+            class="day-btn" />
+          <label [for]="'monday' + i" class="day-label">M</label>
+
+          <input formControlName="tuesday" type="checkbox" [id]="'tuesday' + i" class="day-btn" />
+          <label [for]="'tuesday' + i" class="day-label">T</label>
+
+          <input formControlName="wednesday" type="checkbox" [id]="'wednesday' + i" class="day-btn" />
+          <label [for]="'wednesday' + i" class="day-label">W</label>
+
+          <input formControlName="thursday" type="checkbox" [id]="'thursday' + i" class="day-btn" />
+          <label [for]="'thursday' + i" class="day-label">T</label>
+
+          <input formControlName="friday" type="checkbox" id="friday" class="day-btn" />
+          <label for="friday" class="day-label">F</label>
+
+          <input formControlName="saturday" type="checkbox" [id]="'saturday' + i" class="day-btn" />
+          <label [for]="'saturday' + i" class="day-label">S</label>
+
+          <input formControlName="sunday" type="checkbox" [id]="'sunday' + i" class="day-btn" />
+          <label [for]="'sunday' + i" class="day-label">S</label>
+        </div>
+        <div [tourAnchor]="'duration' + i" class="duration-box">
+          <div class="duration-info">
+            <span>Duration</span>
+            <small>({{
+              durationStore[i] === "Forever"
+              ? "Forever"
+              : durationStore[i] + " days"
+              }})</small>
+          </div>
+
+          <mat-date-range-input class="rangePicker" [rangePicker]="picker">
+            <input formControlName="startDate" (click)="picker.open()" matStartDate readonly placeholder="Start" />
+            <input formControlName="endDate" (click)="picker.open()" matEndDate readonly placeholder="End " />
+          </mat-date-range-input>
+          <mat-date-range-picker [touchUi]="true" #picker></mat-date-range-picker>
+
+          @if (durationStore[i ] !== "Forever") {
+
+          <img (click)="onDurationClick(i)" class="clear-icon" src="clear-a.png" alt="" />
+          }
+        </div>
+
+        <div [tourAnchor]="'pause' + i" class="disable-box">
+          <span>Paused</span>
+          <label class="container">
+            <input formControlName="paused" [checked]="false" type="checkbox" />
+            <div class="checkmark"></div>
+          </label>
+        </div>
+        <div [tourAnchor]="'delete' + i" class="delete-box">
+          <span>Delete</span>
+
+          <img src="delete.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <emoji-mart *ngIf="showPicker" (emojiClick)="emojiClick($event)" [style]="{
+      position: 'absolute',
+      bottom: '0px',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      'z-index': 10,
+      height: '51vh'
+    }"></emoji-mart>
+
+  <button (click)="onSaveClick()" class="save">Save</button>
+
+  <div (click)="onOverlayClick()" *ngIf="showPicker" class="overlay"></div>
+</main>
+
+<tour-step-template></tour-step-template>

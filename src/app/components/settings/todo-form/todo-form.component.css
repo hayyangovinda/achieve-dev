@@ -1,0 +1,321 @@
+.input {
+  border: none;
+  padding-left: 25px;
+  width: 70%;
+  color: hsl(15, 100%, 57%);
+}
+
+.form {
+  background-color: whitesmoke;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  height: calc(100% - 77px);
+}
+
+.input:focus {
+  outline: #ff5b22 solid 2px;
+}
+
+/* .subtitle::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #01204e;
+  display: block;
+  margin-top: 2px;
+} */
+
+.emoji-picker {
+  transform: translateX(-50%);
+}
+
+.icon-input {
+  width: 14%;
+  padding: 0;
+  text-align: center;
+  margin: 0;
+  border-radius: 10px 0 0 10px;
+}
+
+.icon-input::placeholder {
+  font-size: 14px;
+}
+
+.category-input {
+  width: 56%;
+  margin: 0;
+  border-radius: 0 10px 10px 0;
+  transform: translateX(2px);
+}
+
+.category-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.taskForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-container {
+  width: 78%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20px;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.041);
+
+  .input {
+    width: 92%;
+    margin: 0;
+    box-shadow: none;
+  }
+}
+
+.drop-down-icon {
+  position: absolute;
+  top: 19px;
+  right: 25px;
+}
+
+.task-options {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.days {
+  font-size: 13px;
+  font-weight: 600;
+  color: #01204e;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.days-btn-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 34px;
+}
+
+.day-btn {
+  display: none;
+  /* Hide the original checkbox */
+}
+
+.day-label {
+  background-color: transparent;
+  font-size: 11px;
+  font-weight: 600;
+  color: #ff5b22;
+  cursor: pointer;
+  border: 2px solid #ff5b22;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+}
+
+/* Apply styles for the selected state */
+.day-btn:checked+.day-label {
+  background-color: #ffe53b;
+  background-image: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
+  border: none;
+  color: white;
+}
+
+/* Hide the default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.2rem;
+  /* Slightly larger font-size */
+  user-select: none;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  --clr: #0b6e4f;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.04em;
+  /* Slightly larger height */
+  width: 1.04em;
+  /* Slightly larger width */
+  background-color: #ccc;
+  border-radius: 50%;
+  transition: 300ms;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked~.checkmark {
+  background-color: var(--clr);
+  border-radius: 0.4rem;
+  /* Slightly larger border-radius */
+  animation: pulse 500ms ease-in-out;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked~.checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 0.36em;
+  /* Slightly larger left */
+  top: 0.2em;
+  /* Slightly larger top */
+  width: 0.2em;
+  /* Slightly larger width */
+  height: 0.4em;
+  /* Slightly larger height */
+  border: solid #e0e0e2;
+  border-width: 0 0.12em 0.12em 0;
+  /* Slightly larger border-width */
+  transform: rotate(45deg);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 #0b6e4f90;
+    rotate: 20deg;
+  }
+
+  50% {
+    rotate: -20deg;
+  }
+
+  75% {
+    box-shadow: 0 0 0 8px #0b6e4f60;
+    /* Slightly larger box-shadow */
+  }
+
+  100% {
+    box-shadow: 0 0 0 10.4px #0b6e4f30;
+    /* Slightly larger box-shadow */
+    rotate: 0;
+  }
+}
+
+.disable-box,
+.delete-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #01204e;
+}
+
+.delete-box {
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  padding-right: 14px;
+}
+
+::ng-deep .emoji-mart-preview {
+  display: none;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.duration-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+  color: #01204e;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 15px;
+  position: relative;
+
+  .duration-info {
+    display: flex;
+  }
+
+  .clear-icon {
+    position: relative;
+    width: 24px;
+    width: 24px;
+  }
+
+  small {
+    color: #ff5b22;
+    margin-left: 6px;
+    width: 70px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.rangePicker {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+
+  input {
+    font-size: 10px;
+  }
+}
+
+::ng-deep .rangePicker .mat-date-range-input-mirror {
+  max-width: 55px;
+}
+
+::ng-deep .mat-end-date {
+  text-align: right !important;
+}
