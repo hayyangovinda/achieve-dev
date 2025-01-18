@@ -1,5 +1,5 @@
 <main [formGroup]="categoryForm" class="  form">
-  <img (click)="onBackClick()" src="back.svg" alt="" class="back" />
+  <img (click)="onBackClick()" src="public/back.svg" alt="" class="back" />
 
   <h4 class="title">Add Category</h4>
 
@@ -15,7 +15,7 @@
       <input [tourAnchor]="'taskName' + i" formControlName="name" #taskInput placeholder="Task Name" type="text"
         (blur)="checkFilledTaskInput()" class="row input" />
       <img [tourAnchor]="'showTaskOptions' + i" (click)="showTaskOptions(i)" class="drop-down-icon"
-        src="arrow_down.svg" />
+        src="public/arrow_down.svg" />
 
       <div *ngIf="showTaskOptionArray[i]" class="task-options">
         <div [tourAnchor]="'repeatOn' + i" class="days">
@@ -62,7 +62,7 @@
 
           @if (durationStore[i ] !== "Forever") {
 
-          <img (click)="onDurationClick(i)" class="clear-icon" src="clear-a.png" alt="" />
+          <img (click)="onDurationClick(i)" class="clear-icon" src="public/clear-a.png" alt="" />
           }
         </div>
 
@@ -76,7 +76,7 @@
         <div [tourAnchor]="'delete' + i" class="delete-box">
           <span>Delete</span>
 
-          <img src="delete.svg" alt="" />
+          <img src="public/delete.svg" alt="" />
         </div>
       </div>
     </div>
