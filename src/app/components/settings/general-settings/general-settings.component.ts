@@ -24,7 +24,7 @@ export class GeneralSettingsComponent {
   }
 
   addToDoCategory() {
-    this.router.navigateByUrl('settings/add-to-do');
+    this.router.navigateByUrl('settings/categories');
   }
 
   onResetClick() {
