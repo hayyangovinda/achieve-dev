@@ -1,0 +1,66 @@
+.reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 8px;
+  height: 34px;
+  width: 96px;
+  border: none;
+  background: #ff362b;
+  border-radius: 20px;
+  cursor: pointer;
+  line-height: 20px;
+  font-size: 13px;
+  color: #fff;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}
+
+.cancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 8px;
+  height: 34px;
+  width: 96px;
+  border: 1px solid #ff362b;
+  background: #ffffff;
+  border-radius: 20px;
+  cursor: pointer;
+  line-height: 20px;
+  font-size: 13px;
+  color: #ff5b22;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}
+
+::ng-deep .cdk-overlay-pane.mat-mdc-dialog-panel {
+  width: 250px;
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 20px 20px;
+  text-align: center;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
