@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { SharingService } from '../../services/sharing.service';
+import { SharingService } from '../../../services/sharing.service';
 
 @Component({
   selector: 'app-tabs',
