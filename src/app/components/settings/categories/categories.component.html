@@ -1,1 +1,31 @@
-<p>categories works!</p>
+<main class="main">
+  <img
+    (click)="onBackClick()"
+    class="back"
+    src="../../../assets/back.svg"
+    alt=""
+  />
+
+  <h4 class="title cate-title">Categories</h4>
+
+  <div cdkDropList class="list" (cdkDropListDropped)="drop($event)">
+    @for (category of categories; track $index) {
+    <div (click)="onEditClick(category)" class="home-card example-box" cdkDrag>
+      <span class="category-name">{{ category.icon }} {{ category.name }}</span>
+
+      <img
+        (click)="onDeleteClick($event, category)"
+        src="../../../assets/delete.svg"
+        alt=""
+      />
+    </div>
+    }
+  </div>
+
+  <div (click)="onAddToDoClick()" class="home-card">
+    <div class="category-name add-box">
+      <img class="" src="../../../assets/add.svg" alt="" />
+      <span class=""> Add new category</span>
+    </div>
+  </div>
+</main>
