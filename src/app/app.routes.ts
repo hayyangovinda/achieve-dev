@@ -6,4 +6,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./components/home/home.component').then((c) => c.HomeComponent),
   },
+  {
+    path: 'settings',
+    loadComponent: () =>
+      import(
+        './components/settings/general-settings/general-settings.component'
+      ).then((c) => c.GeneralSettingsComponent),
+  },
 ];

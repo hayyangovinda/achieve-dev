@@ -186,9 +186,9 @@ export class HomeComponent implements OnInit {
     const body = { done: task.done };
 
     if (category.tasks.length === category.tasksDone) {
-      category.completeImgPath = '../../public/tup.png';
+      category.completeImgPath = 'tup.png';
     } else {
-      category.completeImgPath = '../../public/tdown.png';
+      category.completeImgPath = 'tdown.png';
     }
 
     this.httpService
@@ -239,9 +239,9 @@ export class HomeComponent implements OnInit {
   addImgtoCategory() {
     this.categories?.forEach((category) => {
       if (category.tasks.length === category.tasksDone) {
-        category.completeImgPath = '../../public/tup.png';
+        category.completeImgPath = 'tup.png';
       } else {
-        category.completeImgPath = '../../public/tdown.png';
+        category.completeImgPath = 'tdown.png';
       }
     });
   }
@@ -320,9 +320,9 @@ export class HomeComponent implements OnInit {
     );
 
     if (this.reminders.length === this.doneRemindersArray.length) {
-      this.reminderCompleteImgPath = '../../public/tup.png';
+      this.reminderCompleteImgPath = 'tup.png';
     } else {
-      this.reminderCompleteImgPath = '../../public/tdown.png';
+      this.reminderCompleteImgPath = 'tdown.png';
     }
   }
 
