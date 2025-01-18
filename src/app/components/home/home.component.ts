@@ -5,10 +5,11 @@ import { SharingService } from '../../services/sharing.service';
 import { Router } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { RatingComponent } from '../rating/rating.component';
+import { LoaderComponent } from '../loader/loader.component';
 
 @Component({
   selector: 'app-home',
-  imports: [RatingComponent],
+  imports: [RatingComponent, LoaderComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
